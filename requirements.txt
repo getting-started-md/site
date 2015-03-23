@@ -1,0 +1,5 @@
+flask
+gunicorn
+frozen-flask
+Flask-Assets
+hamlish-jinja

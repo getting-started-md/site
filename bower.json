@@ -1,0 +1,22 @@
+{
+  "name": "getting-started",
+  "version": "0.0.1",
+  "authors": [
+    "Justin McNally <justin@kohactive.com>"
+  ],
+  "description": "Getting started website",
+  "license": "\"\"",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "getting_started/static",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.1",
+    "materialize": "~0.95.3"
+  }
+}

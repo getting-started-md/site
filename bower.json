@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "react": "~0.13.1",
-    "materialize": "~0.95.3"
+    "materialize": "~0.95.3",
+    "flux": "~2.0.2"
   }
 }

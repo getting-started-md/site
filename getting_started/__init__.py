@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 
 # Determines the destination of the build. Only usefull if you're using Frozen-Flask
 app.config['FREEZER_DESTINATION'] = os.path.dirname(os.path.abspath(__file__))+'/../build'
-
+app.config['FREEZER_STATIC_IGNORE'] = ['*']
 # Function to easily find your assets
 # In your template use <link rel=stylesheet href="{{ static('filename') }}">
 app.jinja_env.globals['static'] = (

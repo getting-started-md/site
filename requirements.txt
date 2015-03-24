@@ -1,6 +1,6 @@
 flask
 gunicorn
-frozen-flask
+-e git+git@github.com:SimonSapin/Frozen-Flask.git#egg=frozen-flask
 Flask-Assets
 hamlish-jinja
 python-frontmatter

@@ -12,6 +12,8 @@ import keyMirror from 'react/lib/keyMirror';
 
 export default keyMirror({
 
+  LOAD_POSTS: null,
+  LOAD_POST: null,
   LOAD_PAGE: null,
   LOAD_PAGE_SUCCESS: null,
   LOAD_PAGE_ERROR: null,

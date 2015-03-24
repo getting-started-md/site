@@ -4,4 +4,5 @@ from getting_started import app
 @app.route('/')
 def index():
   message = "Hello World"
-  return render_template('index.html.haml', message=message)
+  return render_template('index.html.haml')
+

@@ -8,7 +8,6 @@
 
 'use strict';
 
-//require('./NotFoundPage.less');
 
 import React from 'react';
 

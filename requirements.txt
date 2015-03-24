@@ -3,3 +3,4 @@ gunicorn
 frozen-flask
 Flask-Assets
 hamlish-jinja
+python-frontmatter

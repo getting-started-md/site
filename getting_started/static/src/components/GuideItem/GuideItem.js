@@ -10,17 +10,23 @@
 
 import React from 'react';
 
-export default class HomePage extends React.Component {
+export default class GuideItem extends React.Component {
 
   render() {
+    var post = this.props.post;
+    var content = marked(post.content)
     return (
-      <div className="ContentPage"
-        dangerouslySetInnerHTML={{__html: this.props.body}} />
+      <div>
+        <h1>
+          {post.metadata.title}
+        </h1>
+        <p dangerouslySetInnerHTML={{__html: content}}>
+        </p>
+      </div>
     );
   }
 
 }
 
-HomePage.propTypes = {
-  body: React.PropTypes.string.isRequired
+GuideItem.propTypes = {
 };

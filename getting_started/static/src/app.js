@@ -64,6 +64,6 @@ Promise.all([
     }
   }),
   new Promise((resolve) => {
-    AppActions.loadPage(path, resolve);
+    AppActions.listPosts(resolve);
   })
 ]).then(run);

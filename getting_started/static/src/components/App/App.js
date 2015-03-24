@@ -1,14 +1,4 @@
-/*
- * React.js Starter Kit
- * Copyright (c) 2014 Konstantin Tarkus (@koistya), KriaSoft LLC.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 'use strict';
-
-import './App.less';
 
 import React from 'react';
 import invariant from 'react/lib/invariant';
@@ -16,6 +6,7 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
 import ContentPage from '../ContentPage';
+import GuideItem from '../GuideItem';
 import NotFoundPage from '../NotFoundPage';
 
 export default class App extends React.Component {
@@ -44,31 +35,12 @@ export default class App extends React.Component {
       return React.createElement(NotFoundPage, page);
     }
 
+    var posts = AppStore.getPosts();
+
     return (
       <div className="App">
         <Navbar />
-        {
-          this.props.path === '/' ?
-          <div className="jumbotron">
-            <div className="container text-center">
-              <h1>React</h1>
-              <p>Complex web apps made easy</p>
-            </div>
-          </div> :
-          <div className="container">
-            <h2>{page.title}</h2>
-          </div>
-        }
-        <ContentPage className="container" {...page} />
-        <div className="navbar-footer">
-          <div className="container">
-            <p className="text-muted">
-              <span>© Your Company</span>
-              <span><a href="/">Home</a></span>
-              <span><a href="/privacy">Privacy</a></span>
-            </p>
-          </div>
-        </div>
+        <ContentPage className="container" posts={posts} {...page} />
       </div>
     );
   }
@@ -125,7 +97,7 @@ export default class App extends React.Component {
     var path = el.pathname + el.search + (el.hash || '');
 
     event.preventDefault();
-    AppActions.loadPage(path, () => {
+    AppActions.listPosts(() => {
       AppActions.navigateTo(path);
     });
   }

@@ -21,6 +21,6 @@ app.jinja_env.globals['static'] = (
 # add haml
 app.jinja_env.add_extension(HamlishTagExtension)
 
-from getting_started import routes
-
+from getting_started import views
+from getting_started import api
 

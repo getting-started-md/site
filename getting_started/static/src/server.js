@@ -19,7 +19,7 @@ import AppStore from './stores/AppStore';
 
 var server = express();
 
-server.set('port', (process.env.PORT || 5000));
+server.set('port', (process.env.PORT || 9999));
 server.use(express.static(path.join(__dirname)));
 
 //

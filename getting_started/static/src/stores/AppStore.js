@@ -17,6 +17,8 @@ import assign from 'react/lib/Object.assign';
 var CHANGE_EVENT = 'change';
 
 var pages = {};
+var posts = [];
+
 var loading = false;
 
 if (__SERVER__) {
@@ -41,6 +43,10 @@ var AppStore = assign({}, EventEmitter.prototype, {
       title: 'Page Not Found',
       type: 'notfound'
     };
+  },
+
+  getPosts() {
+    return posts;
   },
 
   /**
@@ -84,6 +90,19 @@ AppStore.dispatcherToken = Dispatcher.register((payload) => {
         loading = false;
         if (!action.err) {
           pages[action.path] = action.page;
+        }
+      }
+      AppStore.emitChange();
+      break;
+
+    case ActionTypes.LOAD_POSTS:
+      console.log(action)
+      if (action.source === PayloadSources.VIEW_ACTION) {
+        loading = true;
+      } else {
+        loading = false;
+        if (!action.err) {
+          posts = action.posts;
         }
       }
       AppStore.emitChange();

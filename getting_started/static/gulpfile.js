@@ -65,7 +65,8 @@ gulp.task('assets', function() {
 gulp.task('vendor', function() {
   src.assets = [
     'node_modules/jquery/dist/jquery.js',
-    'node_modules/materialize-css/dist/js/materialize.js'
+    'node_modules/materialize-css/dist/js/materialize.js',
+    'node_modules/marked/lib/marked.js'
   ]
   return gulp.src(src.assets)
     .pipe(concat('vendor.js'))
@@ -135,6 +136,7 @@ gulp.task('build:watch', function(cb) {
 
 // Launch a Node.js/Express server
 gulp.task('serve', ['build:watch'], function(cb) {
+
   src.server = [
     'build/server.js',
     'build/content/**/*',

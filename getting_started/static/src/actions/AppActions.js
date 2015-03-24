@@ -10,6 +10,7 @@
 
 import Dispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
+import PayloadSources from '../constants/PayloadSources';
 import ExecutionEnvironment from 'react/lib/ExecutionEnvironment';
 import http from 'superagent';
 
@@ -28,6 +29,28 @@ export default {
       actionType: ActionTypes.CHANGE_LOCATION,
       path
     });
+  },
+
+  listPosts(cb) {
+    
+    Dispatcher.handleViewAction({
+      actionType: ActionTypes.LOAD_POSTS,
+      source: PayloadSources.VIEW_ACTION,
+      posts: []
+    });
+
+    http.get('/api/posts')
+      .accept('application/json')
+      .end((err, res) => {
+        Dispatcher.handleServerAction({
+          actionType: ActionTypes.LOAD_POSTS,
+          err,
+          posts: res.body.posts
+        });
+        if (cb) {
+          cb();
+        }
+      });
   },
 
   loadPage(path, cb) {

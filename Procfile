@@ -1,0 +1,1 @@
+web: gunicorn getting_started:app  --log-file -

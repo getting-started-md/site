@@ -11,10 +11,10 @@ export default class GuideItem extends React.Component {
       <a href={postUrl}>
         <div className='card card-horizontal guide-item'>
           <div className="row">
-            <div className="col s4">
-              <img src="http://flask.pocoo.org/static/logo/flask.png" />
+            <div className="col s12 m4">
+              <img src={post.metadata.image} />
             </div>
-            <div className="col s8">
+            <div className="col s12 m8">
               <h1>{post.metadata.title}</h1>
               <p>{post.metadata.summary}</p>
             </div>

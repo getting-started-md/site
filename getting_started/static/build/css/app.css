@@ -12666,6 +12666,18 @@ nav .brand-logo
     color: #81c784;
 }
 
+@media only screen and (max-width: 600px)
+{
+    .guide-item img
+    {
+        margin-bottom: 10px;
+    }
+
+    .guide-item h1
+    {
+        font-size: 2rem;
+    }
+}
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+actionscript+aspnet+bash+c+csharp+css-extras+dart+erlang+git+go+groovy+haml+handlebars+haskell+jade+java+objectivec+perl+php+python+jsx+ruby+rust+scss+scala+sql+swift+yaml&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language+highlight-keywords */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -12981,9 +12993,9 @@ pre[class*='language-'] > code[data-language]::before
 pre code[class*='language-']
 {
     display: block;
+    overflow: auto; 
 
-    width: 80%; 
-    padding: 10px;
+    width: 98%;
 
     background: #e8e6e3;
 }
@@ -13005,6 +13017,23 @@ nav .brand-logo
     padding-top: 10px;
 }
 
+@media only screen and (max-width: 992px)
+{
+    nav .brand-logo
+    {
+        position: relative; 
+        top: 32px;
+    }
+}
+@media only screen and (max-width: 600px)
+{
+    nav .brand-logo
+    {
+        font-size: 26px; 
+
+        top: 24px;
+    }
+}
 .guide-item
 {
     margin-top: 48px;

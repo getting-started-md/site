@@ -13033,6 +13033,12 @@ nav .brand-logo
 
         top: 24px;
     }
+
+    .container
+    {
+        width: 98%;
+        padding: 0 .5rem;
+    }
 }
 .guide-item
 {

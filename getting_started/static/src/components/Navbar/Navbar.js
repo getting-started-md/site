@@ -8,7 +8,7 @@ export default class Navbar extends React.Component {
     return (
       <nav>
         <div class="nav-wrapper">
-          <a href="/" className="brand-logo left">Getting-Started.md</a>
+          <a href="/" className="brand-logo left">Getting-Started</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="mdi-navigation-menu"></i></a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><a href="/">Guides</a></li>

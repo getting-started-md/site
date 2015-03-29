@@ -1,11 +1,9 @@
 ---
 number: 1
-title: Getting started with Python / Flask
+title: Python & Flask
 date: 2015-03-22 18:18:57 -0500
 repo: https://github.com/getting-started-md/python-flask
 ---
-
-# Getting started with Python / Flask
 
 ## Background
 
@@ -51,7 +49,7 @@ First we want to create a folder for our project.
 
 I put my project files in `~/projects` so I would type
 
-```
+```bash
 $ mkdir flask-demo
 $ cd flask-demo
 ```
@@ -87,7 +85,7 @@ The loading point of this module is defined in **\__init__.py**
 
 **flask_demo/\__init__.py**
 
-```
+```python
 from flask import Flask
 
 app = Flask(__name__)
@@ -105,7 +103,7 @@ The last last line in this file loads our application routes.
 
 **flask_demo/routes.py**
 
-```
+```python
 from flask import render_template
 from flask_demo import app 
 
@@ -131,7 +129,7 @@ For our application we will just a create a simple index.html template.
 
 **templates/index.html**
 
-```
+```html
   <h1>
     {{ message }}
   </h1>
@@ -147,7 +145,7 @@ First create a main file for your app. This will be your server.
 
 **server.py**
 
-```
+```python
 #!venv/bin/python 
 from flask_demo import app
 

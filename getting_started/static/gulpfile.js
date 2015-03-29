@@ -66,7 +66,8 @@ gulp.task('vendor', function() {
   src.assets = [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/materialize-css/dist/js/materialize.js',
-    'node_modules/marked/lib/marked.js'
+    'node_modules/marked/lib/marked.js',
+    'src/vendor/prism.js'
   ]
   return gulp.src(src.assets)
     .pipe(concat('vendor.js'))
@@ -80,7 +81,7 @@ gulp.task('sass', function() {
   src.styles = [
     'src/styles*/**/*.*'
   ]
-  return sass('src/styles/app.sass', {loadPath: "node_modules/materialize-css/sass"}) 
+  return sass('src/styles/app.sass', {loadPath: ["src/vendor", "node_modules/materialize-css/sass"]}) 
     .on('error', function (err) {
       console.error('Error!', err.message);
     })

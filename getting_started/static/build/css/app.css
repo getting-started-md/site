@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 .materialize-red.lighten-5
 {
     background-color: #fdeaeb !important;
@@ -3203,6 +3204,7 @@ ul li
 nav,
 .card-panel,
 .card,
+pre code[class*='language-'],
 .toast,
 .btn,
 .btn-large,
@@ -8815,7 +8817,8 @@ footer.page-footer .footer-copyright
     background-clip: padding-box;
 }
 
-.card
+.card,
+pre code[class*='language-']
 {
     position: relative;
 
@@ -8828,18 +8831,21 @@ footer.page-footer .footer-copyright
     background-color: #fff;
     background-clip: padding-box;
 }
-.card .card-title
+.card .card-title,
+pre code[class*='language-'] .card-title
 {
     font-size: 24px;
     font-weight: 300; 
 
     color: #fff;
 }
-.card .card-title.activator
+.card .card-title.activator,
+pre code[class*='language-'] .card-title.activator
 {
     cursor: pointer;
 }
-.card a
+.card a,
+pre code[class*='language-'] a
 {
     margin-right: 20px;
 
@@ -8849,78 +8855,102 @@ footer.page-footer .footer-copyright
 
     color: #ffab40;
 }
-.card a:hover
+.card a:hover,
+pre code[class*='language-'] a:hover
 {
     color: #ffd8a6;
 }
 .card.small,
+pre code.small[class*='language-'],
 .card.medium,
-.card.large
+pre code.medium[class*='language-'],
+.card.large,
+pre code.large[class*='language-']
 {
     position: relative;
 }
 .card.small .card-image,
+pre code.small[class*='language-'] .card-image,
 .card.medium .card-image,
-.card.large .card-image
+pre code.medium[class*='language-'] .card-image,
+.card.large .card-image,
+pre code.large[class*='language-'] .card-image
 {
     overflow: hidden;
 }
 .card.small .card-content,
+pre code.small[class*='language-'] .card-content,
 .card.medium .card-content,
-.card.large .card-content
+pre code.medium[class*='language-'] .card-content,
+.card.large .card-content,
+pre code.large[class*='language-'] .card-content
 {
     overflow: hidden;
 }
 .card.small .card-action,
+pre code.small[class*='language-'] .card-action,
 .card.medium .card-action,
-.card.large .card-action
+pre code.medium[class*='language-'] .card-action,
+.card.large .card-action,
+pre code.large[class*='language-'] .card-action
 {
     position: absolute;
     right: 0; 
     bottom: 0;
     left: 0;
 }
-.card.small
+.card.small,
+pre code.small[class*='language-']
 {
     height: 300px;
 }
-.card.small .card-image
+.card.small .card-image,
+pre code.small[class*='language-'] .card-image
 {
     height: 150px;
 }
-.card.small .card-content
+.card.small .card-content,
+pre code.small[class*='language-'] .card-content
 {
     height: 150px;
 }
-.card.medium
+.card.medium,
+pre code.medium[class*='language-']
 {
     height: 400px;
 }
-.card.medium .card-image
+.card.medium .card-image,
+pre code.medium[class*='language-'] .card-image
 {
     height: 250px;
 }
-.card.medium .card-content
+.card.medium .card-content,
+pre code.medium[class*='language-'] .card-content
 {
     height: 150px;
 }
-.card.large
+.card.large,
+pre code.large[class*='language-']
 {
     height: 500px;
 }
-.card.large .card-image
+.card.large .card-image,
+pre code.large[class*='language-'] .card-image
 {
     height: 330px;
 }
-.card.large .card-content
+.card.large .card-content,
+pre code.large[class*='language-'] .card-content
 {
     height: 170px;
 }
-.card .card-image
+.card .card-image,
+pre code[class*='language-'] .card-image
 {
     position: relative;
 }
-.card .card-image img
+.card .card-image img,
+pre code[class*='language-'] .card-image img
 {
     position: relative;
     top: 0;
@@ -8933,7 +8963,8 @@ footer.page-footer .footer-copyright
     border-radius: 2px 2px 0 0;
     background-clip: padding-box;
 }
-.card .card-image .card-title
+.card .card-image .card-title,
+pre code[class*='language-'] .card-image .card-title
 {
     position: absolute;
     bottom: 0;
@@ -8941,7 +8972,8 @@ footer.page-footer .footer-copyright
 
     padding: 20px;
 }
-.card .card-content
+.card .card-content,
+pre code[class*='language-'] .card-content
 {
     box-sizing: border-box; 
     padding: 20px;
@@ -8949,23 +8981,27 @@ footer.page-footer .footer-copyright
     border-radius: 0 0 2px 2px;
     background-clip: padding-box;
 }
-.card .card-content p
+.card .card-content p,
+pre code[class*='language-'] .card-content p
 {
     margin: 0;
 
     color: inherit;
 }
-.card .card-content .card-title
+.card .card-content .card-title,
+pre code[class*='language-'] .card-content .card-title
 {
     line-height: 48px;
 }
-.card .card-action
+.card .card-action,
+pre code[class*='language-'] .card-action
 {
     padding: 20px; 
 
     border-top: 1px solid rgba(160, 160, 160, .2);
 }
-.card .card-reveal
+.card .card-reveal,
+pre code[class*='language-'] .card-reveal
 {
     position: absolute;
     z-index: 1;
@@ -8980,7 +9016,8 @@ footer.page-footer .footer-copyright
 
     background-color: #fff;
 }
-.card .card-reveal .card-title
+.card .card-reveal .card-title,
+pre code[class*='language-'] .card-reveal .card-title
 {
     display: block; 
 
@@ -12603,4 +12640,360 @@ button.picker__close:focus
     {
         margin-bottom: 5em;
     }
+}
+.guideBody h1.header
+{
+    font-size: 4rem; 
+
+    color: #81c784;
+}
+.guideBody h1
+{
+    font-size: 3rem;
+}
+.guideBody h2
+{
+    font-size: 2.75rem;
+}
+.guideBody h3
+{
+    font-size: 2.5rem;
+}
+.guideBody h4
+{
+    font-size: 2.25rem;
+}
+.guideBody h5
+{
+    font-size: 2rem;
+}
+
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+actionscript+aspnet+bash+c+csharp+css-extras+dart+erlang+git+go+groovy+haml+handlebars+haskell+jade+java+objectivec+perl+php+python+jsx+ruby+rust+scss+scala+sql+swift+yaml&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language+highlight-keywords */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*='language-'],
+pre[class*='language-']
+{
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    line-height: 1.5;
+
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    -moz-tab-size: 4;
+         tab-size: 4;
+    -webkit-hyphens: none;
+       -moz-hyphens: none;
+            hyphens: none; 
+
+    color: black;
+    text-shadow: 0 1px white;
+
+    direction: ltr;
+        -ms-hyphens: none;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection
+{
+    background: #b3d4fc; 
+    text-shadow: none;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection
+{
+    background: #b3d4fc; 
+    text-shadow: none;
+}
+
+@media print
+{
+    code[class*='language-'],
+    pre[class*='language-']
+    {
+        text-shadow: none;
+    }
+}
+/* Code blocks */
+pre[class*='language-']
+{
+    overflow: auto; 
+
+    margin: .5em 0;
+    padding: 1em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-']
+{
+    background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-']
+{
+    padding: .1em;
+
+    border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata
+{
+    color: slategray;
+}
+
+.token.punctuation
+{
+    color: #999;
+}
+
+.namespace
+{
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted
+{
+    color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted
+{
+    color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string
+{
+    color: #a67f59;
+    background: rgba(255, 255, 255, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword
+{
+    color: #07a;
+}
+
+.token.function
+{
+    color: #dd4a68;
+}
+
+.token.regex,
+.token.important,
+.token.variable
+{
+    color: #e90;
+}
+
+.token.important,
+.token.bold
+{
+    font-weight: bold;
+}
+
+.token.italic
+{
+    font-style: italic;
+}
+
+.token.entity
+{
+    cursor: help;
+}
+
+pre[data-line]
+{
+    position: relative;
+
+    padding: 1em 0 1em 3em;
+}
+
+.line-highlight
+{
+    line-height: inherit;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin-top: 1em;
+    padding: inherit 0;
+
+    white-space: pre; 
+    pointer-events: none;
+    /* Same as .prism’s padding-top */
+
+    background: rgba(153, 122, 102, .08);
+    background: -webkit-linear-gradient(left, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
+    background:         linear-gradient(left, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after
+{
+    font: bold 65%/1.5 sans-serif;
+
+    position: absolute;
+    top: .4em;
+    left: .6em;
+
+    min-width: 1em;
+    padding: 0 .5em;
+
+    content: attr(data-start);
+    text-align: center;
+    vertical-align: .3em;
+
+    color: #f5f2f0;
+    border-radius: 999px;
+    background-color: rgba(153, 122, 102, .4);
+    box-shadow: 0 1px white; 
+    text-shadow: none;
+}
+
+.line-highlight[data-end]:after
+{
+    top: auto;
+    bottom: .4em; 
+
+    content: attr(data-end);
+}
+
+pre.line-numbers
+{
+    position: relative;
+
+    padding-left: 3.8em;
+
+    counter-reset: linenumber;
+}
+
+pre.line-numbers > code
+{
+    position: relative;
+}
+
+.line-numbers .line-numbers-rows
+{
+    font-size: 100%;
+
+    position: absolute;
+    top: 0;
+    left: -3.8em;
+
+    width: 3em;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; 
+    /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    pointer-events: none;
+
+    border-right: 1px solid #999;
+}
+
+.line-numbers-rows > span
+{
+    display: block;
+
+    counter-increment: linenumber; 
+    pointer-events: none;
+}
+
+.line-numbers-rows > span:before
+{
+    display: block;
+
+    padding-right: .8em;
+
+    content: counter(linenumber);
+    text-align: right; 
+
+    color: #999;
+}
+
+.token a
+{
+    color: inherit;
+}
+
+pre[class*='language-']
+{
+    position: relative;
+}
+
+pre[class*='language-'] > code[data-language]
+{
+    display: block; 
+    overflow: scroll;
+
+    max-height: 28em;
+}
+
+pre[class*='language-'] > code[data-language]::before
+{
+    font-size: .9em;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: inline-block;
+
+    padding: 0 .5em;
+
+    content: attr(data-language);
+
+    color: black;
+    border-radius: 0 0 0 5px;
+    background-color: #cfcfcf;
+    text-shadow: none;
+}
+
+pre code[class*='language-']
+{
+    display: block;
+
+    width: 80%; 
+    padding: 10px;
+
+    background: #e8e6e3;
+}
+
+code
+{
+    padding: 5px; 
+
+    background: #e8e6e3;
 }

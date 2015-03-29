@@ -8,9 +8,12 @@ export default class ContentPage extends React.Component {
   render() {
     var posts = this.props.posts;
     return (
-      <div>
+      <div className="container">
         {posts.map(function(object, i){
-          return <GuideItem post={object} key={i} />;
+          return <div>
+            <GuideItem post={object} key={i} />
+            <div className="divider"></div>
+          </div>;
         })}
       </div>
     );

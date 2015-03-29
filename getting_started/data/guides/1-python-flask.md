@@ -82,9 +82,9 @@ In your project folder create a new folder with the name of your application.
 
 **Sidenote:** If you put hyphens in your module name you are going to have a bad time.
 
-The loading point of this module is defined in **\__init__.py**
+The loading point of this module is defined in **\_\_init\_\_.py**
 
-**flask_demo/\__init__.py**
+**flask\_demo/\_\_init\_\_.py**
 
 ```python
 from flask import Flask
@@ -102,7 +102,7 @@ The first line imports Flask from the flask module. This allows it to be used in
 The last last line in this file loads our application routes.
 
 
-**flask_demo/routes.py**
+**flask\_demo/routes.py**
 
 ```python
 from flask import render_template

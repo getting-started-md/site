@@ -54,7 +54,8 @@ gulp.task('assets', function() {
     'src/content*/**/*.*',
     'src/templates*/**/*.*',
     'node_modules/materialize-css/images*/**',
-    'node_modules/materialize-css/font*/**'
+    'node_modules/materialize-css/font*/**',
+    'src/fonts*/**/*.*'
   ];
   return gulp.src(src.assets)
     .pipe($.changed('build'))

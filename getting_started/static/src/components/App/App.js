@@ -6,7 +6,7 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
 import ContentPage from '../ContentPage';
-import GuideItem from '../GuideItem';
+import GuidePage from '../GuidePage';
 import NotFoundPage from '../NotFoundPage';
 
 export default class App extends React.Component {
@@ -26,23 +26,42 @@ export default class App extends React.Component {
   }
 
   render() {
-    var page = AppStore.getPage(this.props.path);
-    invariant(page !== undefined, 'Failed to load page content.');
-    this.props.onSetTitle(page.title);
 
-    if (page.type === 'notfound') {
-      this.props.onPageNotFound();
-      return React.createElement(NotFoundPage, page);
+    var guideMatch = this.props.path.match(/\/guides\/(.*)$/)
+    var guidePath = null
+
+    if (guideMatch) {
+      guidePath = guideMatch[1]
     }
 
-    var posts = AppStore.getPosts();
+    if (guidePath) {
+      var guide = AppStore.getGuide(guidePath)
+      return (
+        <div className="App">
+          <Navbar />
+          <GuidePage className="container" guide={guide} />
+        </div>
+      );
+    }
+    else {
+      var page = AppStore.getPage(this.props.path);
+      invariant(page !== undefined, 'Failed to load page content.');
+      this.props.onSetTitle(page.title);
 
-    return (
-      <div className="App">
-        <Navbar />
-        <ContentPage className="container" posts={posts} {...page} />
-      </div>
-    );
+      if (page.type === 'notfound') {
+        this.props.onPageNotFound();
+        return React.createElement(NotFoundPage, page);
+      }
+
+      var guides = AppStore.getGuides();
+
+      return (
+        <div className="App">
+          <Navbar />
+          <ContentPage className="container" guides={guides} {...page} />
+        </div>
+      );
+    }
   }
 
   handlePopState(event) {
@@ -63,9 +82,6 @@ export default class App extends React.Component {
       return;
     }
 
-    // Ignore if tag has
-    // 1. "download" attribute
-    // 2. rel="external" attribute
     if (el.getAttribute('download') || el.getAttribute('rel') === 'external') {
       return;
     }
@@ -97,7 +113,7 @@ export default class App extends React.Component {
     var path = el.pathname + el.search + (el.hash || '');
 
     event.preventDefault();
-    AppActions.listPosts(() => {
+    AppActions.listGuides(() => {
       AppActions.navigateTo(path);
     });
   }

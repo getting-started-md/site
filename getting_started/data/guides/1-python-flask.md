@@ -1,8 +1,9 @@
 ---
-number: 1
+id: 1
 title: Python & Flask
 date: 2015-03-22 18:18:57 -0500
 repo: https://github.com/getting-started-md/python-flask
+summary: A walk through explaining how to get started with python development. Flask is a python web development microframework, ideal for learning the basics of python and constructing APIs.
 ---
 
 ## Background

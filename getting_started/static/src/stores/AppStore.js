@@ -13,11 +13,12 @@ import ActionTypes from '../constants/ActionTypes';
 import PayloadSources from '../constants/PayloadSources';
 import EventEmitter from 'eventemitter3';
 import assign from 'react/lib/Object.assign';
+import _ from 'lodash';
 
 var CHANGE_EVENT = 'change';
 
 var pages = {};
-var posts = [];
+var guides = [];
 
 var loading = false;
 
@@ -45,8 +46,15 @@ var AppStore = assign({}, EventEmitter.prototype, {
     };
   },
 
-  getPosts() {
-    return posts;
+  getGuides() {
+    return guides;
+  },
+
+  getGuide(slug) {
+    console.log(guides, slug)
+    return _.find(guides, function(g) {
+      return g.slug == slug
+    })
   },
 
   /**
@@ -95,14 +103,13 @@ AppStore.dispatcherToken = Dispatcher.register((payload) => {
       AppStore.emitChange();
       break;
 
-    case ActionTypes.LOAD_POSTS:
-      console.log(action)
+    case ActionTypes.LOAD_GUIDES:
       if (action.source === PayloadSources.VIEW_ACTION) {
         loading = true;
       } else {
         loading = false;
         if (!action.err) {
-          posts = action.posts;
+          guides = action.guides;
         }
       }
       AppStore.emitChange();

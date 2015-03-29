@@ -6,13 +6,12 @@ import GuideItem from '../GuideItem';
 export default class ContentPage extends React.Component {
 
   render() {
-    var posts = this.props.posts;
+    var guides = this.props.guides;
     return (
       <div className="container">
-        {posts.map(function(object, i){
+        {guides.map(function(object, i){
           return <div>
             <GuideItem post={object} key={i} />
-            <div className="divider"></div>
           </div>;
         })}
       </div>
@@ -22,5 +21,4 @@ export default class ContentPage extends React.Component {
 }
 
 ContentPage.propTypes = {
-  body: React.PropTypes.string.isRequired
 };

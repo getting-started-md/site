@@ -3,6 +3,8 @@ from getting_started import app
 
 @app.route('/')
 def index():
-  message = "Hello World"
   return render_template('index.html.haml')
 
+@app.route("/<path:path>")
+def catch_all(path):
+  return render_template('index.html.haml')

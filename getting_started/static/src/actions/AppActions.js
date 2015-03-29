@@ -31,42 +31,21 @@ export default {
     });
   },
 
-  listPosts(cb) {
+  listGuides(cb) {
     
     Dispatcher.handleViewAction({
-      actionType: ActionTypes.LOAD_POSTS,
+      actionType: ActionTypes.LOAD_GUIDES,
       source: PayloadSources.VIEW_ACTION,
-      posts: []
+      guides: []
     });
 
-    http.get('/api/posts')
+    http.get('/api/guides')
       .accept('application/json')
       .end((err, res) => {
         Dispatcher.handleServerAction({
-          actionType: ActionTypes.LOAD_POSTS,
+          actionType: ActionTypes.LOAD_GUIDES,
           err,
-          posts: res.body.posts
-        });
-        if (cb) {
-          cb();
-        }
-      });
-  },
-
-  loadPage(path, cb) {
-    Dispatcher.handleViewAction({
-      actionType: ActionTypes.LOAD_PAGE,
-      path
-    });
-
-    http.get('/api/page' + path)
-      .accept('application/json')
-      .end((err, res) => {
-        Dispatcher.handleServerAction({
-          actionType: ActionTypes.LOAD_PAGE,
-          path,
-          err,
-          page: res.body
+          guides: res.body.guides
         });
         if (cb) {
           cb();

@@ -1,0 +1,6 @@
+{
+  "name": "GuidePage",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./GuidePage.js"
+}

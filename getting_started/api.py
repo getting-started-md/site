@@ -4,9 +4,9 @@ import frontmatter
 import os
 
 
-@app.route('/api/posts')
-def posts():
-  posts = []
+@app.route('/api/guides')
+def guides():
+  guides = []
   files = []
   for root, dirs, filenames in os.walk("getting_started/data"):
     for f in filenames:
@@ -15,7 +15,8 @@ def posts():
   files = sorted(files)
 
   for f in files:
+    slug = f.replace(".md", "")
     markdown = frontmatter.loads(open(os.path.join(root, f),'r').read())
-    posts.append({"content": markdown.content, "metadata": markdown.metadata})
+    guides.append({"content": markdown.content, "metadata": markdown.metadata, "slug": slug})
 
-  return jsonify({"posts": posts})
+  return jsonify({"guides": guides})

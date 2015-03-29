@@ -31,6 +31,7 @@ export default class GuideItem extends React.Component {
           <h1 className="header">
             {guide.metadata.title}
           </h1>
+          <a href={guide.metadata.repo}>Github Project</a>
           <p dangerouslySetInnerHTML={{__html: content}}>
           </p>
         </div>

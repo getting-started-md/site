@@ -14,6 +14,7 @@ export default class ContentPage extends React.Component {
             <GuideItem post={object} key={i} />
           </div>;
         })}
+        <a href="https://github.com/getting-started-md/site">Contribute a guide on Github</a>
       </div>
     );
   }

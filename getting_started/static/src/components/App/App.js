@@ -36,6 +36,8 @@ export default class App extends React.Component {
 
     if (guidePath) {
       var guide = AppStore.getGuide(guidePath)
+      this.props.onSetTitle("Getting Started with " + guide.metadata.title);
+      ga('send', 'pageview');
       return (
         <div className="App">
           <Navbar />
@@ -47,7 +49,7 @@ export default class App extends React.Component {
       var page = AppStore.getPage(this.props.path);
       invariant(page !== undefined, 'Failed to load page content.');
       this.props.onSetTitle(page.title);
-
+      ga('send', 'pageview');
       if (page.type === 'notfound') {
         this.props.onPageNotFound();
         return React.createElement(NotFoundPage, page);

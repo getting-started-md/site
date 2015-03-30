@@ -23,7 +23,7 @@ var guides = [];
 var loading = false;
 
 if (__SERVER__) {
-  pages['/'] = {title: 'Home Page'};
+  pages['/'] = {title: 'Getting Started guides for every language and framework. Ruby On Rails, Python, Django, PHP, Go, Rust'};
   pages['/privacy'] = {title: 'Privacy Policy'};
 }
 

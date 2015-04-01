@@ -5,6 +5,7 @@ import invariant from 'react/lib/invariant';
 import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
+import Footerbar from '../Footerbar';
 import ContentPage from '../ContentPage';
 import GuidePage from '../GuidePage';
 import NotFoundPage from '../NotFoundPage';
@@ -42,6 +43,7 @@ export default class App extends React.Component {
         <div className="App">
           <Navbar />
           <GuidePage className="container" guide={guide} />
+          <Footerbar />
         </div>
       );
     }
@@ -61,6 +63,7 @@ export default class App extends React.Component {
         <div className="App">
           <Navbar />
           <ContentPage className="container" guides={guides} {...page} />
+          <Footerbar />
         </div>
       );
     }

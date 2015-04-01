@@ -13051,3 +13051,12 @@ pre code.card-horizontal[class*='language-'] img
 {
     width: 100%;
 }
+
+footer
+{
+    margin: 20px 0;
+}
+footer div
+{
+    text-align: center;
+}

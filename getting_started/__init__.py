@@ -1,6 +1,9 @@
 from flask import Flask, url_for
 from hamlish_jinja import HamlishTagExtension
 import os
+import urllib3.contrib.pyopenssl
+
+urllib3.contrib.pyopenssl.inject_into_urllib3()
 
 
 app = Flask(__name__)
@@ -23,4 +26,5 @@ app.jinja_env.add_extension(HamlishTagExtension)
 
 from getting_started import views
 from getting_started import api
+from getting_started import services
 

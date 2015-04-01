@@ -1,9 +1,6 @@
 from flask import Flask, url_for
 from hamlish_jinja import HamlishTagExtension
 import os
-import urllib3.contrib.pyopenssl
-
-urllib3.contrib.pyopenssl.inject_into_urllib3()
 
 
 app = Flask(__name__)

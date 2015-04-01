@@ -7,7 +7,3 @@ python-frontmatter
 mailchimp
 python-dotenv
 logging
-pyopenssl
-ndg-httpsclient
-pyasn1
-urllib3

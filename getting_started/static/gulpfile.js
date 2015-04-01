@@ -68,7 +68,8 @@ gulp.task('vendor', function() {
     'node_modules/jquery/dist/jquery.js',
     'node_modules/materialize-css/dist/js/materialize.js',
     'node_modules/marked/lib/marked.js',
-    'src/vendor/prism.js'
+    'src/vendor/prism.js',
+    'node_modules/jquery.cookie/jquery.cookie.js'
   ]
   return gulp.src(src.assets)
     .pipe(concat('vendor.js'))

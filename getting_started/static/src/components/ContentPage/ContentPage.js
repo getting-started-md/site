@@ -2,6 +2,7 @@
 
 import React from 'react';
 import GuideItem from '../GuideItem';
+import Mailchimp from '../Mailchimp';
 
 export default class ContentPage extends React.Component {
 
@@ -9,6 +10,7 @@ export default class ContentPage extends React.Component {
     var guides = this.props.guides;
     return (
       <div className="container">
+        <Mailchimp />
         {guides.map(function(object, i){
           return <div>
             <GuideItem post={object} key={i} />

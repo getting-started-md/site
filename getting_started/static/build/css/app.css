@@ -3748,7 +3748,7 @@ th
 
     transition: .25s;
 
-    color: #26a69a;
+    color: #66bb6a;
 }
 .collection a.collection-item:not(.active):hover
 {
@@ -3770,7 +3770,7 @@ th
 {
     float: right;
 
-    color: #26a69a;
+    color: #66bb6a;
 }
 
 span.badge
@@ -9902,7 +9902,7 @@ label
 .input-field input[type=search]:focus + label,
 .input-field textarea:focus.materialize-textarea + label
 {
-    color: #26a69a;
+    color: #66bb6a;
 }
 .input-field input[type=text].valid,
 .input-field input[type=password].valid,
@@ -9942,7 +9942,7 @@ label
 }
 .input-field .prefix.active
 {
-    color: #26a69a;
+    color: #66bb6a;
 }
 .input-field .prefix ~ input,
 .input-field .prefix ~ textarea
@@ -10021,8 +10021,8 @@ input[type=number]:focus,
 input[type=search]:focus,
 textarea:focus.materialize-textarea
 {
-    border-bottom: 1px solid #26a69a;
-    box-shadow: 0 1px 0 0 #26a69a;
+    border-bottom: 1px solid #66bb6a;
+    box-shadow: 0 1px 0 0 #66bb6a;
 }
 
 textarea.materialize-textarea
@@ -13059,4 +13059,24 @@ footer
 footer div
 {
     text-align: center;
+}
+
+.mailchimp
+{
+    margin-top: 48px;
+    padding: 32px;
+}
+.mailchimp h2
+{
+    font-size: 2rem; 
+
+    text-align: center;
+}
+.mailchimp a
+{
+    color: #fff;
+}
+.mailchimp a:hover
+{
+    color: #fff;
 }

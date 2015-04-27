@@ -12,7 +12,7 @@ def guides():
     for f in filenames:
       files.append(f)
 
-  files = sorted(files)
+  files = sorted(files, reverse=True)
 
   for f in files:
     slug = f.replace(".md", "")

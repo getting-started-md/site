@@ -9,9 +9,9 @@ export default class GuideItem extends React.Component {
     var guide = this.props.guide;
     var renderer = new marked.Renderer();
     renderer.code = function (code, language) {
-      code = code.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-       return '&#'+i.charCodeAt(0)+';';
-      });
+      // code = code.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+      //  return '&#'+i.charCodeAt(0)+';';
+      // });
       var languageClass = ""
       if (language) {
         languageClass = "language-" + language

@@ -80,7 +80,7 @@ Create a new folder in your project for packages.
 
 and create a file called packages.config with the following content:
 
-```markup
+```html
 <?xml version="1.0" encoding="utf-8"?>
 <packages>
   <package id="Nancy" version="1.2.0" />
@@ -135,7 +135,7 @@ For more information see: [https://msdn.microsoft.com/en-us/library/aa306178.asp
 
 Create a file named Web.config in your application folder root and fill it with the following content.
 
-```markup
+```html
 <system.web>
   <compilation debug="true" targetFramework="4.5" />
   <httpHandlers>
@@ -306,7 +306,7 @@ all: clean sample template_example
 
 First, modify your packages/packages.config by adding
 
-```markup
+```html
   <package id="Microsoft.AspNet.Razor" version="3.2.3" />
   <package id="Nancy.Viewengines.Razor" version="1.2.0" />
 ```
@@ -315,7 +315,7 @@ to the `<packages>` block
 
 Your file should look like this:
 
-```markup
+```html
 <packages>
   <package id="Nancy" version="1.2.0" />
   <package id="Nancy.Hosting.Aspnet" version="1.2.0" />
@@ -332,7 +332,7 @@ run `nuget restore packages/packages.config -PackagesDirectory packages` in the 
 
 Open your web.config and add the following lines to the top:
 
-```markup
+```html
   <configSections>
     <section name="razor" type="Nancy.ViewEngines.Razor.RazorConfigurationSection, Nancy.ViewEngines.Razor" />
   </configSections>
@@ -343,7 +343,7 @@ Open your web.config and add the following lines to the top:
 
 The complete file should look like this:
 
-```markup
+```html
 <?xml version="1.0"?>
 <configuration>
 
@@ -414,7 +414,7 @@ First create a views folder in your application's root.
 
 Next create a new file in the views folder called __hello_world.cshtml__ with the following content:
 
-```markup
+```html
 <!DOCTYPE html>
 <html>
 <body>

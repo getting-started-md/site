@@ -9,22 +9,22 @@ summary: A Lightweight, low-ceremony, framework for building HTTP based services
 
 ## Background on .NET and OSX/Linux
 
-.NET was originally a window only product targeted at replacing Java/Visual J++ and Legacy VisualBasic with C# and VisualBasic.NET
+.NET was originally a windows only product targeted at replacing Java/Visual J++ and Legacy VisualBasic with C# and VisualBasic.NET
 
 This guide will focus on .NET and C# via the Mono project. 
 
-There has been a huge movement over the last 10 years to bring .NET to linux and osx via the mono project. Recently microsoft has opensourced a large ammount of their .NET framework and tools along with contributing to the Mono project.
+There has been a huge movement over the last 10 years to bring .NET to Linux and OSX via the Mono project. Recently Microsoft has opensourced a large ammount of their .NET framework and tools along with contributing to the Mono project.
 
-.NET/C# can be used to develop desktop application, client web applications (Silverlight) and Web apps (ASP.NET)
+.NET/C# can be used to develop desktop applications, client-side web applications (Silverlight) and Server-Side applications (ASP.NET)
 
 Tradional ASP.NET is huge and not well suited to a getting started guide. 
 
-For this guide and to follow with the theme of the guides on this site we will start with the microframework Nancy.
+For this guide, and to follow the theme of this site, we will start with the microframework Nancy.
 
 # What is Nancy
 
-Nany is a lightweight web development framework for the .NET
-framework. At it's core it is a simple router / routing dsl, similar to flask or sinatra.
+Nany is a lightweight web development framework for .NET 
+At it's core, it is a simple router / routing dsl, similar to flask or sinatra.
 
 ## Installing the Mono MDK.
 
@@ -41,16 +41,16 @@ brew cask install mono-mdk
 ## .NET versions
 
 The dot net framework has gone through multiple versions.
-1-4.5 at the time of writing this guide.
+1.0 to 4.5 at the time of writing this guide.
 
-Binstubs are versioned and for the purpose of this guide we are assuming we using .NET 4.x
+Binstubs are versioned and for the purpose of this guide we are going to use .NET 4.x
 
-A common cause of errors is a mismatch between compiler/nuget versions and asp server versions. If you run into strange assembly version mismatch errors, ensure the server and nuget versions match.
+A common cause of errors is a mismatch between compiler/nuget versions and asp server versions. If you run into strange assembly version mismatch errors, ensure the server, compiler and nuget versions match.
 
 
 ## Nuget
 
-Nuget is the package manager of .NET, modern releases of Mono and the MDK should ship with a Nuget binstub. If your release doesn't contain one, there are guides for creating it.
+Nuget is the package manager for .NET, modern releases of Mono and the MDK should ship with a Nuget binstub. If your release doesn't contain one, there are guides for creating it.
 
 See:
 [https://gist.github.com/andypiper/2636885](https://gist.github.com/andypiper/2636885)
@@ -72,13 +72,13 @@ and finally
 
 ## Installing Nancy
 
-First we want to create our package file. This is an xml document that defines our application's dependencies. Similar to a requirements.txt or a Gemfile, if you are familiar with Python or Ruby.
+First, we want to create our package file. This is an xml document that defines our application's dependencies. Similar to a requirements.txt or a Gemfile, if you are familiar with Python or Ruby.
 
 Create a new folder in your project for packages.
 
 `mkdir -p packages`
 
-and create a file called packages.config with the following content.
+and create a file called packages.config with the following content:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -110,24 +110,26 @@ public class SampleModule : Nancy.NancyModule
 
 The first like declares a public class named SampleModules that inherits Nancy.NancyModule.
 
-Next is a construct declaration. In C#, a constructor is a public function with the same name as class.
+Next is a constructor declaration. In C#, a constructor is a public function with the same name as class.
+
+A constructor is what gets called when an instance of your class is created, it does the setup work for your instance.
 
 Inside the function is the Nancy DSL for defining a route.
 
 In this case its defining a response to a GET request for "/" aka our index route.
 
-Finally we tell Nancy to respond to the index route with the text Hello World.
+Finally we tell Nancy to respond to the index route with the text "Hello World".
 
 ## Web Servers
 
 The .NET ecosystem actually has developed a few webservers including IIS/ASP.NET and OWIN.
 
-The happy path to ASP.NET is certainly IIS/ASP.NET so we will just keep things simple. Nancy can also self host, but it is a bit off the beaten path as most .NET development is served via IIS/ASP.NET and there are opensource modules for Apache and FastCGI.
+The happy path to ASP.NET is certainly IIS/ASP.NET so we will just keep things simple. Nancy can also self host, but it is a bit off the beaten path as most .NET development is served via IIS/ASP.NET and there are opensource modules available to host ASP.NET with Apache and FastCGI.
 
 
 ## Web.config
 
-ASP.NET apps general behavior and assembly loading is done via a Web.config. The full spec of Web.config is a bit out of scope, but the following boilerplate will allow you to run a Nancy application in IIS/ASP.NET without much hastle.
+An ASP.NET app's general behavior and assembly loading is configured via a Web.config. The full spec of Web.config is a bit out of scope, but the following boilerplate will allow you to run a Nancy application in IIS/ASP.NET without much hastle.
 
 For more information see: [https://msdn.microsoft.com/en-us/library/aa306178.aspx](https://msdn.microsoft.com/en-us/library/aa306178.aspx)
 
@@ -152,9 +154,9 @@ Create a file named Web.config in your application folder root and fill it with 
 
 ## Building
 
-C# / .NET code is compiled into Byte code and ran in a VM similaraly to Java. The following will allow you to compile your SampleModule into a .NET assembly library which can be loaded by ASP.NET/IIS. The product of this is a DLL file.
+C# / .NET code is compiled into Byte code and run in a VM similarly to Java. The following will allow you to compile your SampleModule into a .NET assembly library which can be loaded by IIS/ASP.NET. The product of this is a DLL file.
 
-In your application root create a bin folder for your compiled assemblies.
+In your application's root path, create a bin folder for your compiled assemblies.
 
 `mkdir -p bin`
 
@@ -164,7 +166,7 @@ Now run the compiler and target the bin folder.
 
 mcs or `Mono Compiler Service` will compile your .cs file into a EXE or DLL.
 
-We are asking for DLL by specifing the `-t:library` flag
+We are asking for a DLL by specifing the `-t:library` flag
 
 We also tell it to load the Nancy assembly from NuGet by specifing the `-r:packages/Nancy.1.2.0/lib/net40/Nancy.dll` flag.
 
@@ -193,9 +195,9 @@ ln -s ../packages/Nancy.1.2.0/lib/net40/Nancy.dll bin/Nancy.dll
 
 Once everything is compiled and the bin folder is prepared, we can run our server.
 
-xsp, is the stand-alone ASP.NET application server. Rember how I said that the binstubs are versioned. Since our application is targeting the 4.x framework version we use `xsp4` if we were target 2 or 3 we could use `xsp2` or `xsp3`.
+xsp, is the stand-alone ASP.NET application server. Rember how I said that the binstubs are versioned. Since our application is targeting the 4.x framework version we use `xsp4` if we were target 2.0 we could use `xsp2`.
 
-In side your application root run
+Inside your application root path run
 
 `xsp4`
 
@@ -203,7 +205,7 @@ This should start a ASP.NET compatible development server and you can view your 
 
 ## Updates
 
-Since .NET runs as compiled bytecode we must recompile the .cs file to a new DLL when we make changes.
+Since .NET runs as compiled bytecode we must recompile the .cs file to a new DLL when we make changes to our modules.
 
 ## Makefile
 
@@ -235,7 +237,7 @@ The all task will just be responsible for running other tasks.
 all: sample
 ``` 
 
-just means that the default task should run the sample task.
+This means that the default task should run the sample task.
 
 When we call `make` it will run sample.
 
@@ -244,11 +246,10 @@ This is where we define how the sample module should be built.
 
 This will run mcs just like before except it will include our dependency variable to help avoid typing out all the dependencies for every module. This will also allow us to add new common dependencies easily.
 
-Finally we just add a server task to easily run our server from the make tool. This is totally optional but just goes to show how make can be a simple runner for our project.
+Finally we just add a *server* task to easily run our server from the make tool. This is totally optional but just goes to show how `make` can be a simple runner for our project.
 
-Now when we update our cs file, all we need to do is type make to recompile our application.
+Now when we update our .cs files, all we need to do is type `make` to recompile our application.
 
-`make`
 
 Adding additional files is as easy as defining additional tasks to compile additional assembiles
 
@@ -429,6 +430,27 @@ If you followed the extra step of adding the *template_example* task to your Mak
 Otherwise you can add it to your Makefile now, or just invoke mcs manually to compile the additional template.
 
 `mcs -r:packages/Nancy.1.2.0/lib/net40/Nancy.dll -t:library TemplateSampleModule.cs -out:bin/TemplateSampleModule.dll`
+
+### Link new Razor assemblies
+
+Either from the command line or in our clean task, we should link the required Razor assemblies.
+
+```
+  ln -s ../packages/Nancy.Hosting.Aspnet.1.2.0/lib/net40/Nancy.Hosting.Aspnet.dll bin/Nancy.Hosting.Aspnet.dll
+  ln -s ../packages/Nancy.1.2.0/lib/net40/Nancy.dll bin/Nancy.dll
+```
+
+or
+
+```
+clean:
+  rm -rf bin/*
+  ln -s ../packages/Nancy.Viewengines.Razor.1.2.0/lib/net40/Nancy.ViewEngines.Razor.dll bin/Nancy.ViewEngines.Razor.dll
+  ln -s ../packages/Microsoft.AspNet.Razor.3.2.3/lib/net45/System.Web.Razor.dll bin/System.Web.Razor.dll
+  ln -s ../packages/Nancy.Hosting.Aspnet.1.2.0/lib/net40/Nancy.Hosting.Aspnet.dll bin/Nancy.Hosting.Aspnet.dll
+  ln -s ../packages/Nancy.1.2.0/lib/net40/Nancy.dll bin/Nancy.dll
+```
+
 
 ### Run the server
 

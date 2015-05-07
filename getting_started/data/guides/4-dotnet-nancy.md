@@ -1,4 +1,11 @@
-## Dotnet And Nancy
+---
+id: 4
+title: .NET & Nancy
+date: 2015-05-06 18:18:57 -0500
+image: /static/images/nancy.png
+repo: https://github.com/getting-started-md/dotnet-nancy
+summary: A Lightweight, low-ceremony, framework for building HTTP based services on .Net and Mono
+---
 
 ## Background on .NET and OSX/Linux
 

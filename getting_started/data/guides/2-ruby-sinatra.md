@@ -106,7 +106,7 @@ In this example a file named **index.erb** under the **views/** directory will b
 </h1>
 ```
 
-This will render the value of message inside if an h1 tag.
+This will render the value of message inside of an h1 tag.
 
 
 ## Run it!

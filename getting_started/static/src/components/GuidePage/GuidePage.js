@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Mailchimp from '../Mailchimp';
 
 export default class GuideItem extends React.Component {
 
@@ -27,6 +28,7 @@ export default class GuideItem extends React.Component {
 
     return (
       <div className="container">
+        <Mailchimp />
         <div className="guideBody">
           <h1 className="header">
             {guide.metadata.title}

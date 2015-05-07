@@ -438,8 +438,8 @@ Otherwise you can add it to your Makefile now, or just invoke mcs manually to co
 Either from the command line or in our clean task, we should link the required Razor assemblies.
 
 ```bash
-  ln -s ../packages/Nancy.Hosting.Aspnet.1.2.0/lib/net40/Nancy.Hosting.Aspnet.dll bin/Nancy.Hosting.Aspnet.dll
-  ln -s ../packages/Nancy.1.2.0/lib/net40/Nancy.dll bin/Nancy.dll
+  ln -s ../packages/Nancy.Viewengines.Razor.1.2.0/lib/net40/Nancy.ViewEngines.Razor.dll bin/Nancy.ViewEngines.Razor.dll
+  ln -s ../packages/Microsoft.AspNet.Razor.3.2.3/lib/net45/System.Web.Razor.dll bin/System.Web.Razor.dll
 ```
 
 or

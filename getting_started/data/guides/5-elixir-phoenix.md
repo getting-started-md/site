@@ -7,9 +7,6 @@ repo: https://github.com/getting-started-md/elixir-phoenix
 summary: Phoenix is a full-blown MVC framework for Elixir.
 ---
 
-
-# Elixir & Phoenix
-
 Phoenix is a full-blown MVC framework for Elixir. It has a similar feel to rails and is quickly becomming the de-facto framework for developing full stack Elixir websites.
 
 
